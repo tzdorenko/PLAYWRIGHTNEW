@@ -1,0 +1,25 @@
+# Node.js dependencies
+node_modules/
+
+# Playwright-specific files and directories
+playwright-report/
+test-results/
+trace-results/
+.playwright/
+.cache/
+.local-browsers/
+
+# Environment variables and secrets
+.env
+.env.*
+*.envrc
+
+# Logs and temporary files
+*.log
+tmp/
+
+# IDE and OS specific files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
