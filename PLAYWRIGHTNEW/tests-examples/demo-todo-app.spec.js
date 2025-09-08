@@ -5,17 +5,17 @@ test.beforeEach(async ({ page }) => {
     await page.goto('https://demo.playwright.dev/todomvc');
 });
 
-// test.beforeAll(async ({ page }) => {
-//     console.log('Executed before all tests');
-// });
+test.beforeAll(async ({}) => {
+    console.log('Executed before all tests');
+});
 
-// test.afterAll(async ({ page }) => {
-//     console.log('Executed after all tests');
-// });
+test.afterAll(async ({}) => {
+    console.log('Executed after all test');
+});
 
-// test.afterEach(async ({ page }) => {
-//     console.log('Executed after each tests');
-// });
+test.afterEach(async ({}) => {
+    console.log('Executed after each test');
+});
 
 const TODO_ITEMS = ['buy some cheese', 'feed the cat', 'book a doctors appointment'];
 
