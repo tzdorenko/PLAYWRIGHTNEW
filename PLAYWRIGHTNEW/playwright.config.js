@@ -13,7 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-    testDir: './tests/forstudy',
+    testDir: './tests',
     /* Run tests in files in parallel */
     fullyParallel: true,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -39,10 +39,25 @@ export default defineConfig({
     /* Configure projects for major browsers */
     projects: [
         {
-            name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
+            name: 'qauto1-chrome',
+            use: {
+                ...devices['Desktop Chrome'],
+                baseURL: 'https://guest:welcome2qauto@qauto.forstudy.space',
+                trace: 'on',
+                video: 'on',
+                screenshot: 'on',
+            },
         },
-
+        {
+            name: 'qauto2-chrome',
+            use: {
+                ...devices['Desktop Chrome'],
+                baseURL: 'https://guest:welcome2qauto@qauto2.forstudy.space',
+                trace: 'on',
+                video: 'on',
+                screenshot: 'on',
+            },
+        },
         {
             name: 'firefox',
             use: { ...devices['Desktop Firefox'] },
