@@ -1,5 +1,11 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+import path from 'path';
+
+dotenv.config({
+    path: path.resolve(process.cwd(), process.env.ENV_FILE || '.env.qauto'),
+});
 
 /**
  * Read environment variables from file.
@@ -12,8 +18,10 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
+console.log('BASE_URL:', process.env.BASE_URL);
+console.log('HTTP_USERNAME:', process.env.HTTP_USERNAME);
 export default defineConfig({
-    testDir: './tests-examples/Home24',
+    testDir: './tests',
     /* Run tests in files in parallel */
     fullyParallel: true,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -27,8 +35,12 @@ export default defineConfig({
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
         /* Base URL to use in actions like `await page.goto('/')`. */
-        baseURL: 'https://guest:welcome2qauto@qauto.forstudy.space',
-
+        baseURL: process.env.BASE_URL,
+        // baseURL: 'https://qauto.forstudy.space/',
+        httpCredentials: {
+            username: process.env.HTTP_USERNAME || 'guest',
+            password: process.env.HTTP_PASSWORD || 'welcome2qauto1',
+        },
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on',
         video: 'on',
@@ -37,8 +49,28 @@ export default defineConfig({
 
     /* Configure projects for major browsers */
     projects: [
+        // {
+        //     name: 'qauto1-chrome',
+        //     use: {
+        //         ...devices['Desktop Chrome'],
+        //         baseURL: 'https://guest:welcome2qauto@qauto.forstudy.space',
+        //         trace: 'on',
+        //         video: 'on',
+        //         screenshot: 'on',
+        //     },
+        // },
+        // {
+        //     name: 'qauto2-chrome',
+        //     use: {
+        //         ...devices['Desktop Chrome'],
+        //         baseURL: 'https://guest:welcome2qauto@qauto2.forstudy.space',
+        //         trace: 'on',
+        //         video: 'on',
+        //         screenshot: 'on',
+        //     },
+        // },
         {
-            name: 'chromium',
+            name: 'Chrome',
             use: { ...devices['Desktop Chrome'] },
         },
 
