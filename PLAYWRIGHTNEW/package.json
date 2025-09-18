@@ -1,15 +1,21 @@
 {
-  "name": "playwrightnew",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"No tests yet\""
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@playwright/test": "^1.55.0",
-    "@types/node": "^24.3.1"
-  }
+    "name": "playwrightnew",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"No tests yet\"",
+        "test:qauto": "cross-env ENV_FILE=.env.qauto npx playwright test",
+        "test:qauto2": "cross-env ENV_FILE=.env.qauto2 npx playwright test"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.55.0",
+        "@types/node": "^24.3.1"
+    },
+    "dependencies": {
+        "cross-env": "^10.0.0",
+        "dotenv": "^17.2.2"
+    }
 }

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Login tests', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('/');
+        await page.goto(process.env.BASE_URL || 'https://qauto.forstudy.space/');
     });
 
     // Positive scenario
