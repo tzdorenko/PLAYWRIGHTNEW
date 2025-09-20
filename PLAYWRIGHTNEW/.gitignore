@@ -9,10 +9,10 @@ trace-results/
 .cache/
 .local-browsers/
 
-# Environment variables and secrets
-.env
-.env.*
-*.envrc
+# # Environment variables and secrets
+# .env
+# .env.*
+# *.envrc
 
 # Logs and temporary files
 *.log
