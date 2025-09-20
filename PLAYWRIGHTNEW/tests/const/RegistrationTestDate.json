@@ -1,0 +1,14 @@
+{
+    "validUser": {
+        "firstName": "Tetiana",
+        "lastName": "Zdorenko",
+        "email": "tanyazdorenkoo+test123@gmail.com",
+        "password": "Qwerty123!"
+    },
+    "existingUser": {
+        "firstName": "Tetiana",
+        "lastName": "Zdorenko",
+        "email": "aqa-tanyazdorenkoo+test123@gmail.com",
+        "password": "Qwerty123!"
+    }
+}
