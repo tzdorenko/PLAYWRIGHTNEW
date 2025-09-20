@@ -1,0 +1,24 @@
+# Node.js dependencies
+
+node_modules/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+playwright-report/
+test-results/
+trace-results/
+.playwright/
+.cache/
+.local-browsers/
+
+
+# Logs and temporary files
+*.log
+tmp/
+
+# IDE and OS specific files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
