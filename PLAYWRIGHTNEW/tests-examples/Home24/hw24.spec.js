@@ -1,8 +1,10 @@
-import { test, expect } from '@playwright/test';
+// import { test, expect } from '@playwright/test';
+import { test } from '../../src/fixtures/authorized';
 
 test.describe('Login tests', () => {
-    test.beforeEach(async ({ page }) => {
-        await page.goto(process.env.BASE_URL || 'https://qauto.forstudy.space/');
+    test.beforeEach(async ({ page, defaultitem }) => {
+        await page.goto('/');
+        console.log(defaultitem);
     });
 
     // Positive scenario
